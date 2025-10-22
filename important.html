@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THIS IS URGET!!!!</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f3f8f4;
+    color: #1e4620;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  main {
+    max-width: 800px;
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  h1, h2 {
+    color: #2e7d32;
+  }
+  .alert {
+    background: #d9f0db;
+    border-left: 5px solid #2e7d32;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  ul {
+    margin-left: 1.5rem;
+  }
+  a.button {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0.3rem 0 0;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  a.button:hover {
+    background: #256628;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  .logos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .logos img {
+    height: 60px;
+  }
+  .quiz {
+    background: #eef8ef;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+  .question {
+    margin-bottom: 1rem;
+  }
+  .feedback {
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  .correct {
+    color: #2e7d32;
+  }
+  .incorrect {
+    color: #b71c1c;
+  }
+  button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background: #256628;
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <h1>This Was a Training Exercise: YOU HAVE BEEN A VICTIM!!!</h1>
+  <div class="alert">
+    You just clicked a simulated phishing email that is part of our official cybersecurity awareness program. 
+    Don’t worry — this was not a real attack. No data or credentials were collected.
+  </div>
+
+  <h2>🔍 How to Spot a Phish</h2>
+  <ul>
+    <li><strong>Check the sender:</strong> Look closely at the full email address.</li>
+    <li><strong>Hover before clicking:</strong> Verify where links actually lead.</li>
+    <li><strong>Watch for urgency:</strong> “Immediate action required” is a classic trick.</li>
+    <li><strong>Look for errors:</strong> Spelling, grammar, or logo issues can reveal fakes.</li>
+    <li><strong>When in doubt, report it!</strong></li>
+  </ul>
+
+  <h2>🧠 Quick Cyber Quiz</h2>
+  <div class="quiz">
+    <div class="question" id="q1">
+      <p><strong>1.</strong> What should you do first if you receive an unexpected email asking you to log in and verify your account?</p>
+      <label><input type="radio" name="q1" value="a"> Click the link to check if it’s real</label><br>
+      <label><input type="radio" name="q1" value="b"> Delete it immediately without checking</label><br>
+      <label><input type="radio" name="q1" value="c"> Hover over the link and report it if it looks suspicious</label>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="question" id="q2">
+      <p><strong>2.</strong> Which of the following is a common sign of a phishing attempt?</p>
+      <label><input type="radio" name="q2" value="a"> The message comes from your regular supervisor’s email address</label><br>
+      <label><input type="radio" name="q2" value="b"> The message creates a sense of urgency or fear</label><br>
+      <label><input type="radio" name="q2" value="c"> The message has your correct full name and title</label>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <button onclick="checkQuiz()">Check Answers</button>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 PENRO South Cotabato — Information Systems and Cybersecurity Unit
+</footer>
+
+<script>
+function checkQuiz() {
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  const f1 = document.getElementById('f1');
+  const f2 = document.getElementById('f2');
+
+  if (!q1 || !q2) {
+    alert("Please answer all questions first.");
+    return;
+  }
+
+  // Q1 correct: c
+  if (q1.value === "c") {
+    f1.textContent = "✅ Correct! Always verify links before clicking and report suspicious emails.";
+    f1.className = "feedback correct";
+  } else {
+    f1.textContent = "❌ Incorrect. You should hover over the link and report it if it looks suspicious.";
+    f1.className = "feedback incorrect";
+  }
+
+  // Q2 correct: b
+  if (q2.value === "b") {
+    f2.textContent = "✅ Correct! Phishers often use urgency or fear to trick you.";
+    f2.className = "feedback correct";
+  } else {
+    f2.textContent = "❌ Incorrect. The main sign is urgency or fear in the message.";
+    f2.className = "feedback incorrect";
+  }
+}
+</script>
+
+</body>
+</html>
