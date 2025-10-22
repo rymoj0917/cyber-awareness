@@ -1,2 +1,2 @@
 # cyber-awareness
-cyber awareness trining
+cyber awareness training
